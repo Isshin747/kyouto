@@ -138,42 +138,62 @@ body{
     padding-bottom:5px
 }
 @media(max-width:768px){
-    body{
-        width:100%;
-        margin:0;
+
+    /* 全体を縦並び */
+    .new-content{
+        display:flex;
+        flex-direction:column;
     }
+
+    /* 全部100%幅にする */
+    article,
+    .mokuji,
+    .syasinn{
+        width:100%;
+    }
+
+    /* 順番（上→下） */
+    .mokuji{
+        order:0;
+        position:static;
+        margin-bottom:20px;
+    }
+
+    article{
+        order:1;
+        padding:20px;
+    }
+
+    .syasinn{
+        order:2;
+    }
+
+    /* スマホ余白 */
+    body{
+        margin:0;
+        padding:0 10px;
+    }
+
+    /* ヘッダー調整 */
     .big{
         height:70vh;
         padding:20px;
+        position:relative;
     }
-    h1{
-        font-size:28px;
-    }
-    .honnbunn{
-        font-size:14px;
-    }
-    .new-content{
-        flex-direction:column;
-    }
-    article{
+
+    /* 画像崩れ防止 */
+    img{
         width:100%;
-        padding:20px;
-        order:1;
-    }
-    .mokuji{
-        width:100%;
-        position:static;
-        order:0;
-        margin-bottom:20px;
-    }
-    .syasinn{
-        width:100%;
-        order:2;
-    }
-    .line img{
         height:auto;
     }
+
+    /* 余白少し調整 */
     section{
-        margin-bottom:50px;
+        margin-bottom:30px;
+    }
+
+    /* フォント少し大きく */
+    .honnbunn{
+        font-size:16px;
     }
 }
